@@ -18,11 +18,18 @@ class TaxCalculator:
         self.income_entry = ctk.CTkEntry(self.window)
         self.income_entry.grid(row=0, column=1, **self.padding)
 
-        # Income label and entr
+        # Income label and entry
         self.tax_label = ctk.CTkLabel(self.window, text='Percent: ')
         self.tax_label.grid(row=1, column=0, **self.padding)
         self.tax_entry = ctk.CTkEntry(self.window)
         self.tax_entry.grid(row=1, column=1, **self.padding)
+
+        # Result label annd entry
+        self.result_label = ctk.CTkLabel(self.window, text='Result: ')
+        self.result_label.grid(row=2, column=0, **self.padding)
+        self.result_entry = ctk.CTkEntry(self.window)
+        self.result_entry.grid(row=2, column=1, **self.padding)
+
 
     def run(self):
         self.window.mainloop()
