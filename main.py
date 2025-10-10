@@ -25,9 +25,10 @@ class TaxCalculator:
         self.tax_entry.grid(row=1, column=1, **self.padding)
 
         # Result label annd entry
-        self.result_label = ctk.CTkLabel(self.window, text='Result: ')
+        self.result_label = ctk.CTkLabel(self.window, text='Tax: ')
         self.result_label.grid(row=2, column=0, **self.padding)
         self.result_entry = ctk.CTkEntry(self.window)
+        self.result_entry.insert(0, '0')
         self.result_entry.grid(row=2, column=1, **self.padding)
 
 
