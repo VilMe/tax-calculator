@@ -31,6 +31,11 @@ class TaxCalculator:
         self.result_entry.insert(0, '0')
         self.result_entry.grid(row=2, column=1, **self.padding)
 
+        # Calculate button
+        self.calculate_button = ctk.CTkButtonn(self.window, text='Calculate', command=self.calculate_tax)
+        self.calculate_button.grid(row=3, column=1, **self.padding)
+        
+
 
     def run(self):
         self.window.mainloop()
