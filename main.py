@@ -16,6 +16,8 @@ class TaxCalculator:
 
         self.income_label = ctk.CTkLabel(self.window, text='Income: ')
         self.income_label.grid(row=0, column=0, **self.padding)
+        self.income_entry = ctk.CTkEntry(self.window)
+        self.income_entry.grid(row=0, column=1, **self.padding)
 
     def run(self):
         self.window.mainloop()
