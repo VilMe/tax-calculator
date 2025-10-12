@@ -44,7 +44,7 @@ class TaxCalculator:
         try:
             income: float = float(self.income_entry.get())
             tax_rate: float = float(self.tax_rate_entry.get())
-            logging.info('tax calculation executed as expected!')
+            logging.warning('tax calculation executed as expected!')
             self.update_result(f'${income * (tax_rate / 100):,.2f}')
         except ValueError:
             self.update_result('Invalid input')
