@@ -1,4 +1,5 @@
 import customtkinter as ctk
+import logging
 
 class TaxCalculator:
     def __init__(self):
@@ -43,12 +44,17 @@ class TaxCalculator:
         try:
             income: float = float(self.income_entry.get())
             tax_rate: float = float(self.tax_rate_entry.get())
+            logging.info('tax calculation executed as expected!')
             self.update_result(f'${income * (tax_rate / 100):,.2f}')
         except ValueError:
             self.update_result('Invalid input')
 
     def run(self):
         self.window.mainloop()
+
+# TODO 
+# add log messages to track actions of when running GUI
+# also add some buttons for default tax rates
 
 
 if __name__ == '__main__':
