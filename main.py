@@ -6,7 +6,7 @@ class TaxCalculator:
         # Initialize our window
         self.window = ctk.CTk()
         self.window.title('Tax Calculator')
-        self.window.geometry('280x250')
+        self.window.geometry('300x300')
         self.window.resizable(False, False)
 
 
@@ -33,12 +33,16 @@ class TaxCalculator:
         self.result_entry.grid(row=2, column=1, **self.padding)
 
         # 33% calculate button
-        self.standard_33_button = ctk.CTkButton(self.window, text="33% Tax", command=self.button_event)
+        self.standard_33_button = ctk.CTkButton(self.window, text="33% Tax", command=self.button_33_event)
         self.standard_33_button.grid(row=3, column=1, **self.padding)
+
+        # 15% calculate button
+        self.standard_33_button = ctk.CTkButton(self.window, text="15% Tax", command=self.button_15_event)
+        self.standard_33_button.grid(row=4, column=1, **self.padding)
 
         # Calculate button
         self.calculate_button = ctk.CTkButton(self.window, text='Calculate', command=self.calculate_tax)
-        self.calculate_button.grid(row=4, column=1, **self.padding)
+        self.calculate_button.grid(row=5, column=1, **self.padding)
 
     def update_result(self, text: str):
         self.result_entry.delete(0, ctk.END)
@@ -53,10 +57,17 @@ class TaxCalculator:
         except ValueError:
             self.update_result('Invalid input')
 
-    def button_event(self):
+    def button_33_event(self):
         try:
             income: float = float(self.income_entry.get())
             self.update_result(f'${income * (0.33):,.2f}')
+        except ValueError:
+            self.update_result('Invalid input')
+
+    def button_15_event(self):
+        try:
+            income: float = float(self.income_entry.get())
+            self.update_result(f'${income * (0.15):,.2f}')
         except ValueError:
             self.update_result('Invalid input')
 
