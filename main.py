@@ -76,9 +76,6 @@ class TaxCalculator:
     def run(self):
         self.window.mainloop()
 
-# TODO 
-# add log messages to track actions of when running GUI
-# also add some buttons for default tax rates
 
 
 if __name__ == '__main__':
